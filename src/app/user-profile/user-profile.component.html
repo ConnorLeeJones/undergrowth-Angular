@@ -1,1 +1,29 @@
-<p>user-profile works!</p>
+<div *ngIf="user"><div *ngIf="profile"></div>
+
+
+
+
+
+
+    
+    <div class="card my-10 w-75 mx-auto bg-dark text-white">
+    
+        <div class="container">
+          <h1>{{user.firstName}} {{user.lastName}}</h1>
+          <div class="form-group">
+                <label for="name">Description: </label>
+                <div id="name" name="name" class="card my-10 w-75 bg-white text-black">
+                        <h6 id="innerText"> {{profile.description}} </h6>
+                        </div>
+                    </div>
+        
+              <div class="form-group">
+                <label for="password">Links:</label>
+                <div class="card my-10 w-75 bg-white text-black">
+                        <h6 id="innerText"> {{profile.links}} </h6>
+        
+              </div>
+        </div>
+    </div>
+
+</div> 

@@ -39,4 +39,14 @@ export class UserService {
     // console.log(this.http.post<User>(this.url, user));
     // this.http.get(this.url).subscribe();
   }
+
+
+  getUserById(id: number): Observable<User>{
+    console.log(this.url + `/${id}`);
+    console.log(this.http.get<User>(this.url + `/${id}`));
+    return this.http.get<User>(this.url + `/${id}`);
+
+  }
+
+
 }

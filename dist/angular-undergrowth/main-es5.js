@@ -41,7 +41,7 @@ module.exports = "<div class=\"card text-white bg-dark\" >\n  <div class=\"card-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card my-5\">\n    <div class=\"container\">\n            <h1>Sign up</h1>\n            <form (ngSubmit)=\"onSubmit()\" #userForm=\"ngForm\">\n                \n              <div class=\"form-group\">\n                    <label for=\"firstName\">First Name</label>\n                    <input [(ngModel)]=\"user.firstName\" type=\"text\" class=\"form-control\" id=\"firstName\" name=\"firstName\">\n                </div>\n        \n        \n              <div class=\"form-group\">\n                    <label for=\"lastName\">Last Name</label>\n                    <input [(ngModel)]=\"user.lastName\" type=\"text\" class=\"form-control\" id=\"lastName\" name=\"lastName\">\n                </div>\n\n\n                <div class=\"form-group\">\n                        <label for=\"username\">*Username</label>\n                        <input [(ngModel)]=\"user.username\" type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" required #username=\"ngModel\">\n                    </div>\n                  <div [hidden]=\"!username.pristine\" class=\"alert alert-danger\">Username is required.</div>\n            \n\n                <div class=\"form-group\">\n                    <label for=\"password\">*Password</label>\n                    <input [(ngModel)]=\"user.password\" type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" required #password=\"ngModel\">\n                </div>\n              <div [hidden]=\"!password.pristine\" class=\"alert alert-danger\">Password is required.</div>\n        \n              <button type=\"submit\" [disabled]=\"!userForm.form.valid\"  class=\"btn btn-success\">Submit</button>\n         </form>\n    </div>    \n</div>\n        "
+module.exports = "<div class=\"card w-25 my-5 mx-auto bg-dark text-white\">\n    <div class=\"container\">\n            <h1>Sign up</h1>\n            <form (ngSubmit)=\"onSubmit()\" #userForm=\"ngForm\">\n                \n              <div class=\"form-group\">\n                    <label for=\"firstName\">First Name</label>\n                    <input [(ngModel)]=\"user.firstName\" type=\"text\" class=\"form-control\" id=\"firstName\" name=\"firstName\">\n                </div>\n        \n        \n              <div class=\"form-group\">\n                    <label for=\"lastName\">Last Name</label>\n                    <input [(ngModel)]=\"user.lastName\" type=\"text\" class=\"form-control\" id=\"lastName\" name=\"lastName\">\n                </div>\n\n\n                <div class=\"form-group\">\n                        <label for=\"username\">*Username</label>\n                        <input [(ngModel)]=\"user.username\" type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" required #username=\"ngModel\">\n                    </div>\n                  <!-- <div [hidden]=\"!username.pristine\" class=\"alert alert-danger\">Username is required.</div> -->\n            \n\n                <div class=\"form-group\">\n                    <label for=\"password\">*Password</label>\n                    <input [(ngModel)]=\"user.password\" type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" required #password=\"ngModel\">\n                </div>\n              <!-- <div [hidden]=\"!password.pristine\" class=\"alert alert-danger\">Password is required.</div> -->\n        \n              <button type=\"submit\" [disabled]=\"!userForm.form.valid\"  class=\"btn btn-success\">Sign up</button>\n         </form>\n    </div>    \n</div>\n        "
 
 /***/ }),
 
@@ -82,6 +82,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user-login/user-login.component */ "./src/app/user-login/user-login.component.ts");
 /* harmony import */ var _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sign-up/sign-up.component */ "./src/app/sign-up/sign-up.component.ts");
+/* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "./src/app/user-profile/user-profile.component.ts");
+
 
 
 
@@ -89,7 +91,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: 'login', component: _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_3__["UserLoginComponent"] },
-    { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_4__["SignUpComponent"] }
+    { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_4__["SignUpComponent"] },
+    { path: 'profile/:id', component: _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_5__["UserProfileComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -170,6 +173,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "./src/app/user-profile/user-profile.component.ts");
 /* harmony import */ var _user_login_user_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user-login/user-login.component */ "./src/app/user-login/user-login.component.ts");
 /* harmony import */ var _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./sign-up/sign-up.component */ "./src/app/sign-up/sign-up.component.ts");
+/* harmony import */ var _services_user_service_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/user-service.service */ "./src/app/services/user-service.service.ts");
+
 
 
 
@@ -198,7 +203,7 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
             ],
-            providers: [],
+            providers: [_services_user_service_service__WEBPACK_IMPORTED_MODULE_10__["UserService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
@@ -256,6 +261,7 @@ var httpOptions = {
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
         'Content-Type': 'application/json'
     })
+    //params: new HttpParams().set()
 };
 var UserService = /** @class */ (function () {
     function UserService(http) {
@@ -264,9 +270,16 @@ var UserService = /** @class */ (function () {
         this.currentUser = new _models_user__WEBPACK_IMPORTED_MODULE_4__["User"]();
     }
     UserService.prototype.addUser = function (user) {
+        console.log(this.url);
         console.log(user);
         this.http.post(this.url, user, httpOptions).subscribe();
+        // console.log(this.http.post<User>(this.url, user));
         // this.http.get(this.url).subscribe();
+    };
+    UserService.prototype.getUserById = function (id) {
+        console.log(this.url);
+        console.log(this.http.get(this.url + ("/" + id)));
+        return this.http.get(this.url + ("/" + id));
     };
     UserService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
@@ -417,13 +430,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserProfileComponent", function() { return UserProfileComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_user_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/user-service.service */ "./src/app/services/user-service.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var UserProfileComponent = /** @class */ (function () {
-    function UserProfileComponent() {
+    function UserProfileComponent(userService, route) {
+        this.userService = userService;
+        this.route = route;
     }
     UserProfileComponent.prototype.ngOnInit = function () {
+        this.getProfile;
+        console.log(this.profile);
+        console.log(this.user);
     };
+    UserProfileComponent.prototype.getProfile = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        this.userService.getUserById(id).subscribe(function (currentUser) {
+            return _this.user = currentUser;
+        });
+    };
+    UserProfileComponent.ctorParameters = function () { return [
+        { type: _services_user_service_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+    ]; };
     UserProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-user-profile',
