@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import { UserService } from '../services/user-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-login',
@@ -8,18 +10,19 @@ import { User } from '../models/user';
 })
 export class UserLoginComponent implements OnInit {
 
-  user: User;
+  public user: User = new User();
+  public currentUser: User;
 
-  constructor() { 
-    this.user = new User();
-  }
+  constructor(private service: UserService,
+    private http: HttpClient) {}
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   onSubmit() {
-    //this.service.logIn(event);
-    console.log('test');
+    this.service.userLogin(this.user);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
 }

@@ -1,12 +1,15 @@
-<div id="login">
-<div class="card w-25 my-5 mx-auto bg-dark text-white" style="width: 200px;">
+<figure>
+    <div class="background2">
 
-    <div class="container my-3">
+<div id="login">
+<div class="card w-25 mx-auto bg-dark text-white bleh">
+
+    <div class="container">
       <h1>Login</h1>
         <form (ngSubmit)="onSubmit()" #userForm="ngForm">
           <div class="form-group">
             <label for="name">Username</label>
-            <input type="text" [(ngModel)]="user.userId"
+            <input type="text" [(ngModel)]="user.username"
                    class="form-control" id="name" name="name" placeholder="Username"
                    required #name="ngModel">
           </div>
@@ -23,4 +26,15 @@
     </div>
 </div>
 </div>
+
+<div *ngIf="currentUser">
+  Hello, {{currentUser.username}}
+</div>
+
+</div>
+<figcaption> Background artwork provided by 
+    <a target="_blank" rel="noopener" id="keith" href="https://www.instagram.com/starfur12/?hl=en">Keith Yong</a>.
+</figcaption>
+</figure>
+
     

@@ -1,7 +1,7 @@
 import { UserProfile } from './user-profile';
 
 export class User {
-    id: string;
+    id: number;
     username: string;
     password: string;
     firstName: string;
@@ -9,7 +9,4 @@ export class User {
     userProfile: UserProfile;
 
     constructor(){}
-
-
-
 }
