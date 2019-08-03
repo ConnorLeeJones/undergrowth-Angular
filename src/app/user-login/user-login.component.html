@@ -1,15 +1,15 @@
 <figure>
-    <div class="background">
+    <div class="background2">
 
 <div id="login">
-<div class="card w-25 mx-auto bg-dark text-white" style="width: 200px;">
+<div class="card w-25 mx-auto bg-dark text-white bleh">
 
     <div class="container">
       <h1>Login</h1>
         <form (ngSubmit)="onSubmit()" #userForm="ngForm">
           <div class="form-group">
             <label for="name">Username</label>
-            <input type="text" [(ngModel)]="user.userId"
+            <input type="text" [(ngModel)]="user.username"
                    class="form-control" id="name" name="name" placeholder="Username"
                    required #name="ngModel">
           </div>
@@ -25,6 +25,10 @@
         </form>
     </div>
 </div>
+</div>
+
+<div *ngIf="currentUser">
+  Hello, {{currentUser.username}}
 </div>
 
 </div>

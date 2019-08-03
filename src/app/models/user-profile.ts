@@ -5,6 +5,6 @@ export class UserProfile {
     description: string;
     zipcode: string;
     links: string;
-    user: User;
     email: string;
+    constructor(){}
 }
