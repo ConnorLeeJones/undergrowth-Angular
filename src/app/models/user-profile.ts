@@ -8,4 +8,8 @@ export class UserProfile {
     email: string;
     type: string;
     constructor(){}
+
+
+
+
 }

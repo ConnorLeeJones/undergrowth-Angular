@@ -21,8 +21,7 @@ export class ProfileService {
 
 
   editProfile(userProfile: UserProfile, id: number){
-    console.log(this.url + '/' + id);
-    return this.http.put<UserProfile>(this.url + '/' + id, userProfile);
+    this.http.put<UserProfile>(this.url + '/' + id, userProfile).subscribe();
   }
   
 }

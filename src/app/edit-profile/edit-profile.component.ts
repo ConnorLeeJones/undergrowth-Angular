@@ -22,6 +22,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit(){
+      // this.profile.id = null;
+      console.log(this.profile);
       this.service.editProfile(this.profile, this.currentUser.id);
   }
 
