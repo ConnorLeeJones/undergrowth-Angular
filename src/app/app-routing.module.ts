@@ -10,13 +10,13 @@ const routes: Routes = [
   { path: 'login', component: UserLoginComponent},
   { path: 'signup', component: SignUpComponent},
   { path: 'profiles/:id', component: UserProfileComponent},
-  { path: 'home', component: HomescreenComponent},
+  { path: 'home', component: HomescreenComponent, runGuardsAndResolvers: "always"},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: "reload"})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

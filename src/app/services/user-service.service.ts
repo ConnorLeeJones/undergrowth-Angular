@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,9 @@ export class UserService {
 
   private url: string;
   public currentUser: User;
+  
 
-  constructor(private http: HttpClient, private loginService: LoginService) { 
+  constructor(private http: HttpClient, private loginService: LoginService, private router: Router) { 
     this.url = environment.baseUrl + '/users';
   }
 
@@ -31,9 +33,14 @@ export class UserService {
       {this.currentUser = user;
         this.currentUser.password = null;
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-      
-
       });
+      this.router.navigate(['/home']);
+
+  }
+
+  userLogout(){
+    localStorage.setItem('currentUser', null);
+    location.reload();
   }
 
 

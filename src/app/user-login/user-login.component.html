@@ -23,9 +23,11 @@
           </div>
           <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Login</button>
         </form>
+        <div>Don't have an account? <a class="nav-link" href="/signup">Sign up.</a>  </div>
     </div>
 </div>
 </div>
+
 
 <div *ngIf="currentUser">
   Hello, {{currentUser.username}}

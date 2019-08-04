@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from './models/user';
+import { UserService } from './services/user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'undergrowth';
+  currentUser: User;
 
 
-  constructor(){}
+  constructor(private service: UserService){}
+
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+  test(){
+    this.service.userLogout();
+  }
+
 }
