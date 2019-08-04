@@ -6,5 +6,6 @@ export class UserProfile {
     zipcode: string;
     links: string;
     email: string;
+    type: string;
     constructor(){}
 }
