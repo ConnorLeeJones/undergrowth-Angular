@@ -1,0 +1,42 @@
+
+<figure>
+        <div class="background2">
+    <div class="card w-75 mx-auto bg-dark text-white">
+        <div class="container">
+                <h1>Edit Profile</h1>
+                <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                    
+                  <div class="form-group">
+                        <label for="description">Description</label>
+                        <input [(ngModel)]="profile.description" type="text" class="form-control" id="description" name="description" placeholder="Description">
+                    </div>
+            
+            
+                  <div class="form-group">
+                        <label for="links">Links</label>
+                        <input [(ngModel)]="profile.links" type="text" class="form-control" id="links" name="links" placeholder="Links">
+                    </div>
+    
+    
+                    <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input [(ngModel)]="profile.email" type="text" class="form-control" id="email" name="email" placeholder="Email Address">
+                        </div>
+                
+    
+                    <div class="form-group">
+                        <label for="type">Profie Type</label>
+                        <input [(ngModel)]="profile.type" type="text" class="form-control" id="type" name="type" placeholder="Profile Type">
+                    </div>
+            
+                  <button type="submit" [disabled]="!userForm.form.valid"  class="btn btn-success">Update Profile</button>
+             </form>
+        </div>    
+    </div>
+            
+    </div>
+    <figcaption> Background artwork provided by 
+        <a target="_blank" rel="noopener" id="keith" href="https://www.instagram.com/starfur12/?hl=en">Keith Yong</a>.
+    </figcaption>
+    </figure>
+    
