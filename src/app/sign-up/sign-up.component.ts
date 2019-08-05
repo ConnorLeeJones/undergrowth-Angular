@@ -22,7 +22,9 @@ export class SignUpComponent implements OnInit {
 
   onSubmit(){
     this.service.addUser(this.user);
-    this.router.navigate(['/login']);
+    this.service.userLogin(this.user);
+
+    // this.router.navigate(['/login']);
   }
 
 }

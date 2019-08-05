@@ -7,6 +7,7 @@ export class User {
     firstName: string;
     lastName: string;
     userProfile: UserProfile;
+    type: string;
 
     constructor(){}
 }

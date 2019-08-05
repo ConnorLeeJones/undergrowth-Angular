@@ -29,8 +29,17 @@
                 
                     <div class="form-group">
                         <label for="type">Profie Type</label>
-                        <input [(ngModel)]="profile.type" type="text" class="form-control" id="type" name="type" placeholder="Profile Type">
-                    </div>
+                        <select [(ngModel)]="profile.type" type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.headers">{{type.name}} </option></select>
+                   </div>
+
+
+                   <!-- <app-type-selector [(ngModel)]="profile.type" class="form-control" id="type" name="type" ></app-type-selector> -->
+
+
+                    <!-- <select><option *ngFor="let type of this.headers">{{type.name}} </option> </select> -->
+
+                    <!-- <app-type-selector></app-type-selector> -->
+
             
                   <button type="submit" [disabled]="!userForm.form.valid"  class="btn btn-success">Update Profile</button>
              </form>

@@ -12,6 +12,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserService } from './services/user-service.service';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { TypeSelectorComponent } from './type-selector/type-selector.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     UserLoginComponent,
     SignUpComponent,
     HomescreenComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    TypeSelectorComponent
   ],
   imports: [
     BrowserModule,
