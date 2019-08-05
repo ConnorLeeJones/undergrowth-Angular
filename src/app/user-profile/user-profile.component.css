@@ -4,5 +4,16 @@
 
 #profilePage{
     height: 700px;
+}
 
+.headerStyle{
+    color: lightseagreen;
+    text-decoration: underline;
+    text-decoration-color: rgb(191, 207, 191);
+    /* margin-right: 20px; */
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: auto;
+
+    width: 50%;
 }

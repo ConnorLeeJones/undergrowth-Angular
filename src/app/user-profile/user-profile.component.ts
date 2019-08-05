@@ -12,14 +12,18 @@ import { User } from '../models/user';
 export class UserProfileComponent implements OnInit {
 
   private user: User;
+  private currentUser: User;
   @Input() profile: UserProfile;
+  private show: boolean;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute) { 
                 this.profile = new UserProfile();
+                this.show = false;
               }
 
   ngOnInit(): void {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.getProfile();
   }
 
@@ -28,6 +32,11 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserById(id).subscribe(currentUser => {
     this.user = currentUser;
     this.profile = this.user.userProfile;
+
+    if (this.currentUser.id === this.user.id){
+      this.show = true;
+    }
+
     });
 
 
