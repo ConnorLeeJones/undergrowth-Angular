@@ -1,0 +1,92 @@
+<!-- 
+
+
+<figure>
+    <div class="background2">
+    
+    <div class="card w-25 mx-auto bg-dark text-white">
+        <div class="container">
+                <h1>Search:</h1>
+                        
+
+                        <div class="form-group">
+                                <label for="type">Profile Type:</label>
+                                <select type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.headers">{{type.name}}s </option></select>
+                           </div>
+
+                           <div class="form-group">
+                                <label for="type">Distance:</label>
+                                <select type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.distances">{{type.name}} </option></select>
+                           </div>
+
+
+    </div>
+    </div>
+    </div>
+
+
+    <figcaption> Background artwork provided by 
+        <a target="_blank" rel="noopener" id="keith" href="https://www.instagram.com/starfur12/?hl=en">Keith Yong</a>.
+    </figcaption>
+</figure> -->
+    
+
+
+
+
+<figure>
+        <div class="background2">
+    <div class="card w-25 mx-auto bg-dark text-white">
+        <div class="container">
+                <h1>Search:</h1>
+                <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                    
+                  <div class="form-group">
+                        <label for="type">Profile Type:</label>
+                            <select [(ngModel)]="searchCriteria.profileType" type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.headers">{{type.name}} </option></select>
+                    </div>
+            
+                  <div class="form-group">
+                        <label for="type">Distance:</label>
+                                <select [(ngModel)]="searchCriteria.distance" type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.distances">{{type.name}} </option></select>
+                    </div>
+            
+                  <button type="submit" [disabled]="!userForm.form.valid"  class="btn btn-success">Search</button>
+             </form>
+        </div>    
+    </div>
+
+
+    <div class="card w-25 mx-auto bg-dark text-white">
+            <div class="container" *ngIf="results">
+                    <table>
+                            <thead>
+                                <th>Name</th>
+                                <th>Index</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let result of results">
+                                    <td>{{result.type}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                </div>
+
+
+
+
+
+            
+    </div>
+
+
+
+
+
+
+    <figcaption> Background artwork provided by 
+        <a target="_blank" rel="noopener" id="keith" href="https://www.instagram.com/starfur12/?hl=en">Keith Yong</a>.
+    </figcaption>
+    </figure>
+    

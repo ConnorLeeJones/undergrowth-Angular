@@ -23,5 +23,17 @@ export class ProfileService {
   editProfile(userProfile: UserProfile, id: number){
     this.http.put<UserProfile>(this.url + '/' + id, userProfile).subscribe();
   }
+
+  findLocalProfiles(type: String){
+    return this.http.get<UserProfile[]>(this.url + '/local/' + type);
+
+  }
+
+  findAllProfiles(type: String){
+    return this.http.get<UserProfile[]>(this.url + '/all/' + type);
+
+  }
+
+
   
 }
