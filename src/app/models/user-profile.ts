@@ -7,6 +7,7 @@ export class UserProfile {
     links: string;
     email: string;
     type: string;
+    user: User;
     constructor(){}
 
 

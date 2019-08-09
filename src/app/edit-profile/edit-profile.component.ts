@@ -16,12 +16,19 @@ export class EditProfileComponent implements OnInit {
   private currentUser: User;
   private typeSelector: TypeSelectorComponent = new TypeSelectorComponent();
   private headers = this.typeSelector.header;
+
   constructor(private service: ProfileService,
                   private router: Router) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(this.headers);
+    //this.service.getProfile().subscribe(profile => this.profile = profile)
+
+    if (this.currentUser){
+      this.service.getProfile().subscribe(profile => this.profile = profile);
+      //this.profile = this.service.getProfile;
+    }
   }
 
   onSubmit(){

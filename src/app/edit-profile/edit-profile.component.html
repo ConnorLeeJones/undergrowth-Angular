@@ -27,19 +27,10 @@
                             <input [(ngModel)]="profile.zipcode" type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zipcode">
                         </div>
                 
-                    <div class="form-group">
-                        <label for="type">Profie Type</label>
+                    <div class="form-group w-25">
+                        <label for="type">Profile Type</label>
                         <select [(ngModel)]="profile.type" type="text" class="form-control" id="type" name="type"><option  *ngFor="let type of this.headers">{{type.name}} </option></select>
                    </div>
-
-
-                   <!-- <app-type-selector [(ngModel)]="profile.type" class="form-control" id="type" name="type" ></app-type-selector> -->
-
-
-                    <!-- <select><option *ngFor="let type of this.headers">{{type.name}} </option> </select> -->
-
-                    <!-- <app-type-selector></app-type-selector> -->
-
             
                   <button type="submit" [disabled]="!userForm.form.valid"  class="btn btn-success">Update Profile</button>
              </form>

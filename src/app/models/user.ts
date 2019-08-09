@@ -8,6 +8,7 @@ export class User {
     lastName: string;
     userProfile: UserProfile;
     type: string;
+    userFullName: string;
 
     constructor(){}
 }
