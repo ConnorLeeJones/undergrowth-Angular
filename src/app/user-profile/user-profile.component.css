@@ -6,6 +6,7 @@
 
 #profilePage{
     height: 500px;
+    /* background-color: lightseagreen; */
 }
 
 .profileComponents{
@@ -17,5 +18,10 @@
     text-decoration: underline;
     text-decoration-color: rgb(191, 207, 191);
     margin: auto;
+    padding: 5px;
     font: italic bold 12px/30px;
+}
+
+.cardHeader{
+
 }

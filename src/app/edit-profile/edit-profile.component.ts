@@ -23,8 +23,11 @@ export class EditProfileComponent implements OnInit {
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(this.headers);
+    //this.service.getProfile().subscribe(profile => this.profile = profile)
+
     if (this.currentUser){
-      this.profile = this.currentUser.userProfile;
+      this.service.getProfile().subscribe(profile => this.profile = profile);
+      //this.profile = this.service.getProfile;
     }
   }
 

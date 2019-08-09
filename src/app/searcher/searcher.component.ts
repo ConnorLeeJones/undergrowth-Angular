@@ -42,9 +42,9 @@ export class SearcherComponent implements OnInit {
     console.log(this.searchCriteria);
 
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.currentUserProfile = currentUser.userProfile;
+    this.profileService.getProfile().subscribe(profile => this.currentUserProfile = profile);
     if (this.searchCriteria.distance === 'Local'){
-      this.profileService.findLocalProfiles(this.searchCriteria.profileType)
+      this.profileService.findLocalProfiles(this.searchCriteria.profileType, this.currentUserProfile)
       .subscribe(profiles => this.results = profiles);
     } else {
       this.profileService.findAllProfiles(this.searchCriteria.profileType)
