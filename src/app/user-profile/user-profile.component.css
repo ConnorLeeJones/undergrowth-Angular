@@ -1,19 +1,21 @@
 #innerText{
     color: black;
+    padding-left: 10px;
+    padding: 10px;
 }
 
 #profilePage{
-    height: 700px;
+    height: 500px;
+}
+
+.profileComponents{
+    height: 100px;
 }
 
 .headerStyle{
     color: lightseagreen;
     text-decoration: underline;
     text-decoration-color: rgb(191, 207, 191);
-    /* margin-right: 20px; */
-    /* margin-right: auto;
-    margin-left: auto; */
     margin: auto;
-
-    width: 50%;
+    font: italic bold 12px/30px;
 }

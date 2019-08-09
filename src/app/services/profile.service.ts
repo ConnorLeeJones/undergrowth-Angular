@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { UserProfile } from '../models/user-profile';
 import { HttpClient } from '@angular/common/http';
+import { UserPages } from '../models/user-pages';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,12 @@ export class ProfileService {
 
   findAllProfiles(type: String){
     return this.http.get<UserProfile[]>(this.url + '/all/' + type);
-
   }
+
+
+  // findAllUserPages(){
+  //   return this.http.get<UserPages[]>(environment.baseUrl + '/userPages?page=1');
+  // }
 
 
   

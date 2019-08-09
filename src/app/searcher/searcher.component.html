@@ -57,22 +57,29 @@
     </div>
 
 
-    <div class="card w-25 mx-auto bg-dark text-white">
-            <div class="container" *ngIf="results">
-                    <table>
-                            <thead>
-                                <th>Name</th>
-                                <th>Index</th>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let result of results">
-                                    <td>{{result.type}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <div *ngIf="results">
+        <div class="card w-50 mx-auto bg-dark text-white my-5">
+                <div class="container">
+                 <!-- *ngIf="results"> -->
+                    <div class="card-body">
+                        <div class ="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-striped">
+                            <thead class="thead-dark">
+                                    <th>Name</th>
+                                    <th>Profile</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let result of results">
+                                        <td>{{result.userFullName}}</td>
+                                        <td><a routerLink="/profiles/{{result.id}}">profile</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
                 </div>
-                </div>
-
+            </div>
+        </div>
+        </div>
 
 
 

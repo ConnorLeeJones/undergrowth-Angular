@@ -19,7 +19,8 @@ export class AppComponent {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
-  test(){
+  logOut(){
+    this.currentUser = null;
     this.service.userLogout();
   }
 

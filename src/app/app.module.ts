@@ -14,6 +14,7 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { TypeSelectorComponent } from './type-selector/type-selector.component';
 import { SearcherComponent } from './searcher/searcher.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearcherComponent } from './searcher/searcher.component';
     HomescreenComponent,
     EditProfileComponent,
     TypeSelectorComponent,
-    SearcherComponent
+    SearcherComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

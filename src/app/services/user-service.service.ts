@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { UserLoginComponent } from '../user-login/user-login.component';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,12 @@ export class UserService {
   }
 
   addUser(user: User) {
-    this.http.post(this.url, user).subscribe();
+    this.http.post(this.url, user).subscribe(
+      user => { this.userLogin(user as User);
+          this.router.navigate(['/editProfile']);
+      }
+
+    );
   }
 
 
@@ -29,18 +35,27 @@ export class UserService {
   }
 
   userLogin(user: User){
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
     this.loginService.login(user).subscribe(user => 
       {this.currentUser = user;
         this.currentUser.password = null;
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+        location.reload();
       });
       this.router.navigate(['/home']);
 
   }
 
   userLogout(){
-    localStorage.setItem('currentUser', null);
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
     location.reload();
+// better???
+    // localStorage.setItem('currentUser', undefined);
+    // localStorage.removeItem('currentUser');
+    // this.currentUser = undefined;
+    // location.reload();
   }
 
 

@@ -2,16 +2,16 @@
 <div *ngIf="user"><div *ngIf="profile">
 
 <div id="profileHeader" class="card w-75 mx-auto bg-dark text-white">
-    <div class="headerStyle"><h1> <b><em>{{user.firstName}} {{user.lastName}}</em></b></h1></div>
+    <div class="headerStyle"><h1> <b><em>{{user.firstName}} {{user.lastName}} </em></b> <span>({{profile.type}}) </span>  </h1> </div>
 </div>
 
-    <div id="profilePage" class="card my-10 w-75 mx-auto bg-dark text-white">
-        <div class="container w-100">
+    <div id="profilePage" class="card my-10 w-75 my-10 mx-auto bg-dark text-white">
+        <div class="container w-100 my-10">
                         
 
           <div class="form-group">
-                <label for="name">Description: </label>
-                <div id="name" name="name" class="card my-10 bg-white text-black">
+                <div class="card-header bg-secondary headerStyle">Description</div>
+                <div id="name" name="name" class="card my-10 mx-auto bg-light text-black profileComponents">
                         <h6 id="innerText"> {{profile.description}} </h6>
                         </div>
                     </div>
@@ -40,21 +40,21 @@
 
         
               <div class="form-group">
-                <label for="links">Links:</label>
-                <div id="links" name="links" class="card my-10 bg-white text-black">
+                  <div class="card-header bg-secondary my-10 headerStyle">Links</div>
+                <div id="links" name="links" class="card my-10 bg-white text-black profileComponents">
                         <h6 id="innerText"> {{profile.links}} </h6>
               </div>
             </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                     <label for="type">Type: </label>
-                    <div id="type" name="type" class="card my-10 bg-white text-black">
+                    <div id="type" name="type" class="card my-10 bg-white text-black profileComponents">
                             <h6 id="innerText"> {{profile.type}} </h6>
                             </div>
-                            </div>
+                            </div> -->
                     
             
-                <a *ngIf="show" class="btn btn-info" href="/editProfile">Edit Profile</a>
+                <a *ngIf="show" class="btn btn-success" href="/editProfile">Edit Profile</a>
         </div>
        
     </div>
