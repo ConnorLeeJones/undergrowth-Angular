@@ -25,10 +25,12 @@ export class UserService {
   addUser(user: User) {
     this.http.post(this.url, user).subscribe(
       user => { this.userLogin(user as User);
-          this.router.navigate(['/editProfile']);
+          // this.router.navigate(['/editProfile']);
       }
 
     );
+    // this.router.navigate(['/editProfile']);
+
   }
 
 
