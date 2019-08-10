@@ -4,6 +4,7 @@
   }
 
   .caption {
-    align-self: bottom;
+    z-index: -1;
+    color: aliceblue;
   }
   
