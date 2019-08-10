@@ -1,36 +1,31 @@
-<div class="card text-white bg-dark" >
-  <div class="card-header"> 
-    <!-- <h4><b><em>{{ title }}</em></b> </h4> -->
+<div class="card text-white bg-dark">
+  <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs text-white bg-gray">
-        <h4 id="navHeader" ><b><em> {{ title }}</em></b> </h4>
+      <h4 id="navHeader"><b><em> {{ title }}</em></b> </h4>
 
       <li class="nav-item">
         <a class="nav-link" href="/home">home</a>
       </li>
-      <!-- <li class="nav-item" *ngIf="!currentUser">
-        <a class="nav-link" href="/login">login</a>
-      </li> -->
 
-        <li class="nav-item" *ngIf="currentUser; else notLoggedIn">
-            <a class="nav-link" (click)="logOut()" href="/login">log out</a>
-          </li>
+      <li class="nav-item" *ngIf="currentUser; else notLoggedIn">
+        <a class="nav-link" (click)="logOut()" href="/login">log out</a>
+      </li>
 
-          <ng-template #notLoggedIn>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">login</a>
-            </li>
-          </ng-template>
+      <ng-template #notLoggedIn>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">login</a>
+        </li>
+      </ng-template>
 
-          <li class="nav-item" *ngIf="currentUser">
-              <a class="nav-link" href="/profiles/{{currentUser.id}}">profile</a>
-            </li>
+      <li class="nav-item" *ngIf="currentUser">
+        <a class="nav-link" href="/profiles/{{currentUser.id}}">profile</a>
+      </li>
 
-            <li class="nav-item" *ngIf="currentUser">
-                <a class="nav-link" href="/search">search</a>
-              </li>
-              
-              <!-- <h6 id="greeting" *ngIf="currentUser"> Hello, {{currentUser.firstName}}</h6> -->
-      </ul>
+      <li class="nav-item" *ngIf="currentUser">
+        <a class="nav-link" href="/search">search</a>
+      </li>
+
+    </ul>
 
   </div>
 </div>

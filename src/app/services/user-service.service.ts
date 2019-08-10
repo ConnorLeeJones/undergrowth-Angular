@@ -57,11 +57,6 @@ export class UserService {
     localStorage.removeItem('currentUser');
     this.currentUser = null;
     location.reload();
-// better???
-    // localStorage.setItem('currentUser', undefined);
-    // localStorage.removeItem('currentUser');
-    // this.currentUser = undefined;
-    // location.reload();
   }
 
 

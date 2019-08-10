@@ -1,35 +1,38 @@
 <div class="background2">
 
-<div *ngIf="user"><div *ngIf="profile">
+  <div *ngIf="user">
+    <div *ngIf="profile">
 
 
-<div id="profileHeader" class="card w-75 mx-auto bg-dark text-white">
-    <div class="headerStyle"><h1> <b><em>{{user.firstName}} {{user.lastName}} </em></b> <span>({{profile.type}}) </span>  </h1> </div>
-</div>
+      <div id="profileHeader" class="card w-75 mx-auto bg-dark text-white">
+        <div class="headerStyle">
+          <h1> <b><em>{{user.firstName}} {{user.lastName}} </em></b> <span>({{profile.type}}) </span> </h1>
+        </div>
+      </div>
 
-    <div id="profilePage" class="card w-75 mx-auto bg-secondary text-white">
+      <div id="profilePage" class="card w-75 mx-auto bg-secondary text-white">
         <div class="container w-100 my-10">
-                        
+
 
           <div *ngIf="profile.description" class="form-group my-5">
-              <div id="name" name="name" class="cardHeader mx-auto bg-light text-black profileComponents">
-                <div class="card-title w-100 bg-dark headerStyle">Description</div>
-                <h6 id="innerText"> {{profile.description}} </h6>
-              </div>
+            <div id="name" name="name" class="cardHeader mx-auto bg-light text-black profileComponents">
+              <div class="card-title w-100 bg-dark headerStyle">Description</div>
+              <h6 id="innerText"> {{profile.description}} </h6>
+            </div>
           </div>
-          
-        
-          <div *ngIf="profile.links" class="form-group my-5">
-              <div id="name" name="name" class="cardHeader mx-auto bg-light text-black profileComponents">
-                <div class="card-title w-100 bg-dark headerStyle">Links</div>
-                <h6 id="innerText"> {{profile.links}} </h6>
-              </div>
-          
-            </div><a *ngIf="show" class="btn btn-success" href="/editProfile">Edit Profile</a></div>
-       
-    </div>
-   
-</div> 
-</div>
-</div>
 
+
+          <div *ngIf="profile.links" class="form-group my-5">
+            <div id="name" name="name" class="cardHeader mx-auto bg-light text-black profileComponents">
+              <div class="card-title w-100 bg-dark headerStyle">Links</div>
+              <h6 id="innerText"> {{profile.links}} </h6>
+            </div>
+
+          </div><a *ngIf="show" class="btn btn-success" href="/editProfile">Edit Profile</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
