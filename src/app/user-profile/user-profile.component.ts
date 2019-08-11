@@ -11,10 +11,10 @@ import { User } from '../models/user';
 })
 export class UserProfileComponent implements OnInit {
 
-  private user: User;
-  private currentUser: User;
+  user: User;
+  currentUser: User;
   @Input() profile: UserProfile;
-  private show: boolean;
+  show: boolean;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute) { 
