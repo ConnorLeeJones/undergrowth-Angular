@@ -20,15 +20,15 @@ import { Router } from '@angular/router';
 export class SearcherComponent implements OnInit {
 
 
-  private typeSelector: TypeSelectorComponent = new TypeSelectorComponent();
-  private headers = this.typeSelector.header;
-  private distances = [{ name: 'Local' }, { name: 'All'}]
-  private searchCriteria: SearchCriteria = new SearchCriteria();
-  public results: UserProfile[];
-  private userResults: User[];
-  private currentUserProfile: UserProfile;
+  typeSelector: TypeSelectorComponent = new TypeSelectorComponent();
+  headers = this.typeSelector.header;
+  distances = [{ name: 'Local' }, { name: 'All'}]
+  searchCriteria: SearchCriteria = new SearchCriteria();
+  results: UserProfile[];
+  userResults: User[];
+  currentUserProfile: UserProfile;
   
-  private userPages: UserPages[];
+  userPages: UserPages[];
 
   constructor(private profileService: ProfileService, private router: Router) { }
 

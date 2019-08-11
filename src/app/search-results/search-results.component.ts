@@ -10,7 +10,7 @@ import { UserProfile } from '../models/user-profile';
 export class SearchResultsComponent implements OnInit {
 
 
-  private results : UserProfile[];
+  results : UserProfile[];
 
   constructor(private searcher: SearcherComponent) { }
 

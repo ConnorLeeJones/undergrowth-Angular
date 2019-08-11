@@ -12,10 +12,10 @@ import { TypeSelectorComponent } from '../type-selector/type-selector.component'
 })
 export class EditProfileComponent implements OnInit {
 
-  public profile: UserProfile = new UserProfile();
-  private currentUser: User;
-  private typeSelector: TypeSelectorComponent = new TypeSelectorComponent();
-  private headers = this.typeSelector.header;
+  profile: UserProfile = new UserProfile();
+  currentUser: User;
+  typeSelector: TypeSelectorComponent = new TypeSelectorComponent();
+  headers = this.typeSelector.header;
 
   constructor(private service: ProfileService,
                   private router: Router) { }
