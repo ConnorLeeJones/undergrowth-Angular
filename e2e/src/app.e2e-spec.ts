@@ -10,8 +10,24 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to angular-undergrowth!');
+    expect(page.getTitleText()).toEqual('undergrowth');
   });
+
+  it('should display login', () => {
+    page.navigateToPath('/login');
+    browser.sleep(5000);
+    expect(page.getHeaderText()).toEqual('Login');
+  });
+
+
+  it('should display sign up', () => {
+    page.navigateToPath('/signup');
+    browser.sleep(5000);
+    expect(page.getHeaderText()).toEqual('Sign up');
+  });
+
+
+
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

@@ -16,6 +16,7 @@ export class UserService {
   private url: string;
   public currentUser: User;
   public currentUserProfile: UserProfile;
+  private loggedIn: boolean = false;
   
 
   constructor(private http: HttpClient, private loginService: LoginService, private router: Router) { 
@@ -47,9 +48,12 @@ export class UserService {
         this.currentUserProfile = this.currentUser.userProfile;
         console.log(this.currentUserProfile);
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+        this.loggedIn = true;
         location.reload();
       });
+      
       this.router.navigate(['/home']);
+
 
   }
 
@@ -58,6 +62,15 @@ export class UserService {
     this.currentUser = null;
     location.reload();
   }
+
+  isLoggedIn(){
+    return this.loggedIn;
+  }
+
+
+
+
+
 
 
 
