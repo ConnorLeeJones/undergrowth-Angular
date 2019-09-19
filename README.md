@@ -1,14 +1,17 @@
-# AngularUndergrowth
+# Undergrowth
+
+https://undergrowth.herokuapp.com
+
+This is the repository for the front end of undergrowth, a project currently being independently developed by Connor Jones. Undergrowth is a place for artists and musicians to gain exposure and connect with one another.
+
+To run locally, run in conjunction with the back end repository, found here https://github.com/ConnorLeeJones/undergrowth-SpringBoot. See below for more details regarding how to run in a local environment.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
