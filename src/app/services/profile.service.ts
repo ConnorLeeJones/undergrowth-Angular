@@ -36,7 +36,9 @@ export class ProfileService {
   editProfile(userProfile: UserProfile, id: number){
     console.log(this.currentUser);
     this.http.put<UserProfile>(this.url + '/' + id, userProfile).subscribe();
-    // this.loginService.login(this.currentUser);
+    this.loginService.login(this.currentUser);
+    this.router.navigate(['profiles' + '/' + id]);
+
   }
 
   findLocalProfiles(type: String, profile: UserProfile){
