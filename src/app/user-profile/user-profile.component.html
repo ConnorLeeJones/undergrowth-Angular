@@ -1,5 +1,8 @@
 <div class="background2">
 
+<div><a *ngIf="show" class="btn btn-success" href="/editProfile">Edit Profile</a>
+</div>
+  
   <div *ngIf="user">
     <div *ngIf="profile">
 
@@ -27,12 +30,14 @@
               <div class="card-title w-100 bg-dark headerStyle">Links</div>
               <h6 id="innerText"> {{profile.links}} </h6>
             </div>
-
+<!-- 
           </div><a *ngIf="show" class="btn btn-success" href="/editProfile">Edit Profile</a>
-        </div>
+        </div> -->
 
       </div>
 
     </div>
   </div>
+</div>
+</div>
 </div>
